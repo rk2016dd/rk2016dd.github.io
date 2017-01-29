@@ -39,7 +39,7 @@
       stage.addChild(vitaminC);
 
       // Tween
-      createjs.Tween.get(vitaminC).wait(1000).call(viWalk).to({x:500},2000).call(viStop).wait(1000).call(irWalk).to({x:500,y:300},2000).call(irStop);
+      createjs.Tween.get(vitaminC).wait(1000).call(viWalk).to({x:500},2000).call(viStop);
 
       function viWalk(){
         vitaminC.gotoAndPlay('walk');
@@ -47,6 +47,7 @@
 
       function viStop(){
         vitaminC.gotoAndPlay('stop');
+        createjs.Tween.get(iron).call(irWalk).to({x:500},2000).call(irStop);
       }
 
       function irWalk(){
